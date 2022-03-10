@@ -204,10 +204,6 @@ async function moveArticle(args) {
       { headers: { Authorization: `Basic ${encoded}` } }
     );
     console.log("FINISHED!!")
-    // .then((res) => {
-    //   // Add delete article
-    //   console.log("FINISHED", res);
-    // });
   } catch (error) {
     console.log(
       "Original author no longer exists. Setting Lara as Author",
@@ -221,10 +217,6 @@ async function moveArticle(args) {
         { headers: { Authorization: `Basic ${encoded}` } }
       )
       .catch((err) => console.log("ERROR", err.message));
-      // .then((res) => {
-      //   // Add delete article
-      //   console.log("FINISHED");
-      // });
     } else return;
     console.log("FINISHED!");
   }
@@ -253,21 +245,3 @@ async function deleteArticle(data) {
 }
 
 getArticle();
-
-// Changes author and adds labels
-// async function updateArticle(args, data, domainName) {
-//     const { author_id, label_names } = args.article;
-//     const id = data.article.id;
-//     const article = {
-//         "author_id": author_id,
-//         "label_names": label_names
-//     };
-//     axios
-//     .put(
-//       `https://${domainName}.zendesk.com/api/v2/help_center/en-us/articles/${id}`,
-//       {article},
-//       { headers: { Authorization: `Basic ${encoded}` } }
-//     )
-//     .then((res) => console.log("RESSSSSSS2", res))
-//     .catch((error) => console.log("DUMMYYYYYYYY2", error));
-// }
